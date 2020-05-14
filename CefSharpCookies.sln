@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CefSharpCookies", "CefSharpCookies\CefSharpCookies.csproj", "{B9EEE96B-7F61-41ED-A738-BCE48095BB94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9EEE96B-7F61-41ED-A738-BCE48095BB94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EEE96B-7F61-41ED-A738-BCE48095BB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EEE96B-7F61-41ED-A738-BCE48095BB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EEE96B-7F61-41ED-A738-BCE48095BB94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D852983E-2039-454F-8523-CD1B0C1EE78D}
+	EndGlobalSection
+EndGlobal
