@@ -18,5 +18,7 @@ namespace CefSharpCookies.Interfaces
         int GetInt(ConfigKey key);
 
         double GetDouble(ConfigKey key);
+
+        bool GetBool(ConfigKey key);
     }
 }

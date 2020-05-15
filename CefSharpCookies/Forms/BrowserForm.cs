@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using CefSharp;
 using CefSharp.WinForms;
 using CefSharpCookies.Enums;
 using CefSharpCookies.Interfaces;
@@ -61,8 +62,35 @@ namespace CefSharpCookies.Forms
             {
                 configService.Set(ConfigKey.WindowState, this.WindowState.ToString());
                 configService.Save();
-                Environment.Exit(0);
+
+                if (!configService.GetBool(ConfigKey.StoreCookies))
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    Cef.GetGlobalCookieManager().FlushStore(new TaskCompleted(() => Environment.Exit(0)));
+                }
             };
         }
+    }
+
+    internal class TaskCompleted : ICompletionCallback
+    {
+        private readonly Action _action;
+
+        public TaskCompleted(Action action)
+        {
+            this._action = action;
+        }
+
+        public void Dispose()
+        {
+            this.IsDisposed = true;
+        }
+
+        public void OnComplete() => this._action();
+
+        public bool IsDisposed { get; set; }
     }
 }

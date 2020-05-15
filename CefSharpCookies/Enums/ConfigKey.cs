@@ -21,13 +21,17 @@ namespace CefSharpCookies.Enums
         public static readonly ConfigKey WindowWidth = 
             new ConfigKey("windowWidth", "1366"); 
 
+        public static readonly ConfigKey StoreCookies = 
+            new ConfigKey("storeCookies", true.ToString());
+
         public static readonly List<ConfigKey> All = new List<ConfigKey>
         {
             StartupUrl,
             CacheFolderName,
             WindowState,
             WindowHeight,
-            WindowWidth
+            WindowWidth,
+            StoreCookies,
         };
 
         public ConfigKey(string name, string defaultValue)

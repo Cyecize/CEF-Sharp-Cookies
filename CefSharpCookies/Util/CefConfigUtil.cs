@@ -24,7 +24,9 @@ namespace CefSharpCookies.Util
             CefSettings settings = new CefSettings
             {
                 CachePath = Path.Combine(Directory.GetCurrentDirectory(),
-                    configService.GetString(ConfigKey.CacheFolderName))
+                    configService.GetString(ConfigKey.CacheFolderName)),
+                PersistSessionCookies = configService.GetBool(ConfigKey.StoreCookies),
+                CefCommandLineArgs = { "renderer-process-limit" , "1"}
             };
 
 

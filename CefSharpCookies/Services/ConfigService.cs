@@ -56,6 +56,11 @@ namespace CefSharpCookies.Services
             return double.Parse(this.GetString(key));
         }
 
+        public bool GetBool(ConfigKey key)
+        {
+            return bool.Parse(this.GetString(key));
+        }
+
         private void CreateConfigFile()
         {
             if (File.Exists(ConfigFileName)) return;
