@@ -66,6 +66,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\ConfigKey.cs" />
+    <Compile Include="Forms\BrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BrowserForm.Designer.cs">
+      <DependentUpon>BrowserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IConfigService.cs" />
     <Compile Include="Services\ConfigService.cs" />
     <Compile Include="StartUp.cs" />
