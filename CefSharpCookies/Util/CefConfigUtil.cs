@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using CefSharp;
 using CefSharp.WinForms;
 using CefSharpCookies.Enums;
@@ -23,7 +24,7 @@ namespace CefSharpCookies.Util
         {
             CefSettings settings = new CefSettings
             {
-                CachePath = Path.Combine(Directory.GetCurrentDirectory(),
+                CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                     configService.GetString(ConfigKey.CacheFolderName)),
                 PersistSessionCookies = configService.GetBool(ConfigKey.StoreCookies),
                 CefCommandLineArgs = { "renderer-process-limit" , "1"}
