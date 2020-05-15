@@ -14,6 +14,8 @@ namespace CefSharpCookies.Forms
         {
             InitializeComponent();
 
+            this.InitFormPosition(configService);
+
             this._browser = new ChromiumWebBrowser(configService.GetString(ConfigKey.StartupUrl))
             {
                 Dock = DockStyle.Fill,
@@ -32,9 +34,35 @@ namespace CefSharpCookies.Forms
             this.LblLoading.Hide();
         }
 
+        private void InitFormPosition(IConfigService configService)
+        {
+            this.Width = configService.GetInt(ConfigKey.WindowWidth);
+            this.Height = configService.GetInt(ConfigKey.WindowHeight);
+
+
+            bool successfulParse = Enum.TryParse(configService.GetString(ConfigKey.WindowState), out FormWindowState state);
+
+            if (successfulParse)
+            {
+                this.WindowState = state;
+            }
+        }
+
         private void InitEvents(IConfigService configService)
         {
-            //TODO: init events.
+            this.SizeChanged += (sender, eventArgs) =>
+            {
+                configService.Set(ConfigKey.WindowWidth, this.Width.ToString());
+                configService.Set(ConfigKey.WindowHeight, this.Height.ToString());
+            };
+
+
+            this.FormClosing += (sender, eventArgs) =>
+            {
+                configService.Set(ConfigKey.WindowState, this.WindowState.ToString());
+                configService.Save();
+                Environment.Exit(0);
+            };
         }
     }
 }
