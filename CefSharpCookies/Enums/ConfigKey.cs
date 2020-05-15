@@ -8,10 +8,14 @@ namespace CefSharpCookies.Enums
         public static readonly ConfigKey StartupUrl =
             new ConfigKey("startupURL", "http://google.com");
 
+        public static readonly ConfigKey CacheFolderName = 
+            new ConfigKey("cacheFolderName", "CefCache");
+
 
         public static readonly List<ConfigKey> All = new List<ConfigKey>
         {
-            StartupUrl
+            StartupUrl,
+            CacheFolderName
         };
 
         public ConfigKey(string name, string defaultValue)
