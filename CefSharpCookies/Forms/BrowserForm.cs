@@ -14,8 +14,6 @@ namespace CefSharpCookies.Forms
         {
             InitializeComponent();
 
-            InitializeComponent();
-
             this._browser = new ChromiumWebBrowser(configService.GetString(ConfigKey.StartupUrl))
             {
                 Dock = DockStyle.Fill,
@@ -24,11 +22,19 @@ namespace CefSharpCookies.Forms
             this._browser.IsBrowserInitializedChanged += this.OnIsBrowserInitializedChanged;
 
             this.Controls.Add(this._browser);
+
+            this.InitEvents(configService);
         }
 
         private void OnIsBrowserInitializedChanged(object sender, EventArgs e)
         {
             this._browser.Show();
+            this.LblLoading.Hide();
+        }
+
+        private void InitEvents(IConfigService configService)
+        {
+            //TODO: init events.
         }
     }
 }

@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.LblLoading = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // LblLoading
+            // 
+            this.LblLoading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LblLoading.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLoading.Location = new System.Drawing.Point(0, 0);
+            this.LblLoading.Name = "LblLoading";
+            this.LblLoading.Size = new System.Drawing.Size(800, 450);
+            this.LblLoading.TabIndex = 0;
+            this.LblLoading.Text = "Loading...";
+            this.LblLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BrowserForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LblLoading);
+            this.Name = "BrowserForm";
             this.Text = "BrowserForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label LblLoading;
     }
 }
