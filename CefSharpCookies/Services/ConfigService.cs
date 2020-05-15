@@ -24,7 +24,7 @@ namespace CefSharpCookies.Services
 
         public void Save()
         {
-            this.WriteToFile(JsonConvert.SerializeObject(this._config));
+            this.WriteToFile(JsonConvert.SerializeObject(this._config, Formatting.Indented));
         }
 
         public void Set(string key, string value)
