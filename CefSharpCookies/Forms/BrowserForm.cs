@@ -27,12 +27,20 @@ namespace CefSharpCookies.Forms
             this.Controls.Add(this._browser);
 
             this.InitEvents(configService);
+
+            this._browser.Show();
+            this.LblLoading.Hide();
         }
 
         private void OnIsBrowserInitializedChanged(object sender, EventArgs e)
         {
-            this._browser.Show();
-            this.LblLoading.Hide();
+            //TODO: following lines below belong here, but are commented since they seem to be causing issues
+            //TODO: for some systems. Put them back when you figure out why.
+            //TODO: exception MSG:
+            //Invalid operation in multiple threads: attempting to access the control '' not from the thread in which it was created.
+
+            //this._browser.Show();
+            //this.LblLoading.Hide();
         }
 
         private void InitFormPosition(IConfigService configService)
